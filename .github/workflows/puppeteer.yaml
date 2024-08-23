@@ -2,24 +2,24 @@ name: Run Puppeteer Script
 
 on:
   schedule:
-    - cron: '0 */2 * * *' # Запуск каждые 2 часа
+    - cron: '0 */2 * * *'  # Запуск каждые 2 часа
+  workflow_dispatch:  # Добавляет кнопку "Run workflow" в интерфейсе GitHub Actions
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
 
-      - name: Install dependencies
-        run: npm install
+    - name: Install dependencies
+      run: npm install
 
-      - name: Run Puppeteer script
-        run: node index.js
-        env:
-          GOOGLE_SHEET_API_KEY: ${{ secrets.GOOGLE_SHEET_API_KEY }}
+    - name: Run Puppeteer script
+      run: node index.js
