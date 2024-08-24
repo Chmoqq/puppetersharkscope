@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "googleapis": "^142.0.0",
     "puppeteer": "^23.1.1"
   }
 }
