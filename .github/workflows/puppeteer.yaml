@@ -21,10 +21,7 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Install Puppeteer and Chrome
-      run: npx puppeteer install
-
-    - name: Run script
+    - name: Run Puppeteer Script
       env:
         GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
         GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
